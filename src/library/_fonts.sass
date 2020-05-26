@@ -1,0 +1,12 @@
+@import "variables.sass"
+@import "mixins.sass"
+
+/**
+  * Файловая структура дожна соответсвовать:
+  * 1.Название папки хранения семейства шрифтов с использованием camelCase, например ProximaNova
+  * 2.Название шрифта с использованием camelCase, например ProximaNova
+  * 3.Начертание шрифта через дефис с большой буквы, например ProximaNova-Regular
+  * Вид пути на выходе: src:url(../fonts/ProximaNova/ProximaNova-Regular.woff2)
+  */
+@include fontFace($fontNotoSans, (300, 400, 700))
+@include fontFace($fontJura, (400, 700))

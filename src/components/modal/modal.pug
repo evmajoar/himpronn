@@ -1,0 +1,69 @@
+.modal.modal--orderQ
+  .modal__container
+    button.modal__close(type='button')
+      span Закрыть окно
+    h2.modal__title Оставьте заявку
+    p.modal__text Мы произведем расчет и перезвоним вам #[br] с коммерческим предложением
+    form.modal__form
+      label.modal__field
+        span.modal__field-name Имя
+        span.modal__field-input-wrap
+          input.modal__field-input(type='text', name='orderQName', placeholder='Имя')
+      label.modal__field
+        span.modal__field-name E-mail
+        span.modal__field-input-wrap
+          input.modal__field-input(type='email', name='orderQEmail', placeholder='E-mail')
+      label.modal__field
+        span.modal__field-name Телефон
+        span.modal__field-input-wrap
+          input.modal__field-input(type='tel', name='orderQTel', placeholder='Телефон')
+      label.modal__field
+        span.modal__field-name Какой продукт Вам нужен?
+        span.modal__field-input-wrap
+          input.modal__field-input(type='text', name='orderQQuestion', placeholder='Какой продукт Вам нужен?')  
+      button(type='submit').button.button--yellow.modal__button
+        span Отправить заявку
+
+
+.modal.modal--order
+  .modal__container
+    button.modal__close(type='button')
+      span Закрыть окно
+    h2.modal__title Оставьте заявку
+    p.modal__text Мы произведем расчет и перезвоним вам #[br] с коммерческим предложением
+    form.modal__form
+      label.modal__field
+        span.modal__field-name Имя
+        span.modal__field-input-wrap
+          input.modal__field-input(type='text', name='orderName', placeholder='Имя')
+      label.modal__field
+        span.modal__field-name E-mail
+        span.modal__field-input-wrap
+          input.modal__field-input(type='email', name='orderEmail', placeholder='E-mail')
+      label.modal__field
+        span.modal__field-name Телефон
+        span.modal__field-input-wrap
+          input.modal__field-input(type='tel', name='orderTel', placeholder='Телефон')
+      input.modal__field-input(type='hidden', name='orderTitle')    
+      button(type='submit').button.button--yellow.modal__button
+        span Отправить заявку        
+
+
+.modal.modal--callback
+  .modal__container
+    button.modal__close(type='button')
+      span Закрыть окно
+    h2.modal__title Оставьте контакты
+    p.modal__text Мы перезвоним в ближайшее время
+    form.modal__form
+      label.modal__field
+        span.modal__field-name Имя
+        span.modal__field-input-wrap
+          input.modal__field-input(type='text', name='callbackName', placeholder='Имя')
+      label.modal__field
+        span.modal__field-name Телефон
+        span.modal__field-input-wrap
+          input.modal__field-input(type='tel', name='callbackTel', placeholder='Телефон')
+      button(type='submit').button.button--yellow.modal__button
+        span Отправить заявку        
+      

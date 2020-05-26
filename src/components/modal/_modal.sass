@@ -1,0 +1,137 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.modal
+  $component: & //#{$component}__element
+  background-color: $colorWhite
+  max-width: 320px
+  width: 100%
+  padding: 30px 27px 39px
+  position: relative
+  z-index: 52
+  display: none
+  animation: slideDown .3s
+
+  @include breakPoint(md)
+    padding: 63px 200px 136px
+    max-width: $container-md
+
+  @include breakPoint(xl)
+    max-width: 970px 
+
+
+  // &__container
+  //   margin: 0 auto
+  //   max-width: 560px
+  //   width: 100% 
+
+
+  &__title
+    margin-top: 24px
+    line-height: 120%
+    font-weight: 700
+    text-align: center
+    @include fontFamily($fontJura)
+    @include fontSize(24)
+
+    @include breakPoint(md)
+      @include fontSize(36)
+      line-height: 40px
+      font-weight: 400
+
+
+  &__text
+    margin-top: 30px
+    font-weight: 300
+    font-size: 14px
+    line-height: 150%
+    text-align: center
+
+
+  &__form
+    margin-top: 20px
+
+    @include breakPoint(md)
+      margin-top: 30px
+
+
+  &__field-name
+    @include hide-text
+
+
+  &__field-input 
+    padding: 21px 10px 11px
+    border: 0
+    border-bottom: 1px solid #DADADA
+    width: 100%
+    box-shadow: none !important;
+    font-weight: 300
+    line-height: 150%
+    @include placeholder
+      color: $textColor
+    @include placeholder-hidden
+
+
+  &__button
+    margin-top: 40px
+    font-weight: 400 
+    width: 100%
+
+    @include breakPoint(md)
+      margin: 40px auto 0
+      display: block
+      width: auto
+
+
+  &__close
+    background: none
+    border: 0
+    padding: 0
+    position: absolute
+    display: block
+    top: 10px
+    right: 10px
+    width: 26px
+    height: 26px
+    cursor: pointer
+    z-index: 103
+
+    @include breakPoint(md)
+      right: 65px
+      top: 63px
+
+    span
+      font-size: 0
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 12px
+      right: 0
+      width: 26px
+      height: 2px
+      background-color: $colorBlack
+      transition: all $transitionTime
+
+    &::before
+      transform: rotate(45deg)
+
+    &::after
+      transform: rotate(-45deg)
+
+    &:active
+      &::before,
+      &::after
+        background-color: $colorRed
+
+    &:hover
+      &::before,
+      &::after
+        @include breakPoint(xl)
+          background-color: $colorRed
+
+
+  &--open
+    display: block

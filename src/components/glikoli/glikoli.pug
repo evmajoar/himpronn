@@ -1,0 +1,22 @@
+include glikoli.data.pug
+
+section.glikoli
+  .glikoli__container
+
+    .glikoli__why
+      h2.glikoli__why-title Почему гликоли лучше дистиллированной воды?
+      p.glikoli__why-text Гликоли обеспечивают лучшие параметры теплопередачи и может смешиваться с водой для обеспечения различных характеристик теплопередачи
+      ul.glikoli__why-list
+        each why in dataWhy
+          li.glikoli__why-item
+            !=why.icon
+            b=why.title
+            p=why.text
+
+    .glikoli__where
+      h2.glikoli__where-title Где используются гликоли
+      p.glikoli__where-text Гликолиевые растворы используются на любых объектах, где присутсвуют холодильные и отопительные системы - от теплоэллектроцентралей до бассейнов и стадионов. Они предотвращают риск перегревания и замерзания оборудования, защищают от накипи и окисления. На их основе также получают пищевые добавки и косметические средства.
+      ul.glikoli__where-list
+        each where in dataWhere
+          li.glikoli__where-item
+            b!=where.title

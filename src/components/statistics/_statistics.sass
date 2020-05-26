@@ -1,0 +1,78 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.statistics
+  $component: & //#{$component}__element
+  padding-top: 90px
+  padding-bottom: 50px
+  background-color: $colorYellow
+
+  @include breakPoint(md)
+    padding-top: 100px
+    padding-bottom: 100px
+
+  @include breakPoint(xl)
+    padding-top: 101px
+    padding-bottom: 125px
+    position: relative
+
+  &::before
+    @include breakPoint(xl)
+      content: ''
+      display: block
+      position: absolute
+      top: 40%
+      left: 0
+      background: url("#{$imageDir}decor/image-decor-liquid.svg") center / cover no-repeat
+      width: ((561px / 1920px) * 100)#{'%'}
+      max-width: 480px
+      height: 465px
+      transition: all $transitionTime
+
+  &:hover
+    @include breakPoint(xl)
+      &::before
+        left: -5%
+
+
+  &__container
+    @include gridContainer()
+    padding-left: 25px
+    padding-right: 25px
+
+
+  &__list
+    @include breakPoint(md)
+      grid-column: 1/-1
+      display: grid
+      grid-template-columns: repeat(2, 270px)
+      grid-gap: $gridGutterWidth
+      justify-content: center
+
+    @include breakPoint(xl)
+      grid-template-columns: repeat(4, 1fr)
+
+
+  &__item
+    margin-bottom: 30px
+    line-height: 150%
+    font-weight: 300
+
+    @include breakPoint(md)
+      margin-bottom: 0
+
+    b
+      @include fontFamily($fontJura)
+      @include fontSize(36)
+      font-weight: 400
+      line-height: 40px
+
+      @include breakPoint(xl)
+        @include fontSize(60)
+        line-height: 100%
+
+    &:last-child
+      margin-bottom: 0
+
+

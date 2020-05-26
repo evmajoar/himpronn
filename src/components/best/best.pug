@@ -1,0 +1,12 @@
+include best.data.pug
+
+section.best
+  .best__container
+    h2.best__title Что делает нас #[br] лучшими на рынке?
+    ul.best__list
+      each bestItem in bestData
+        li.best__item
+          strong
+            !=bestItem.icon
+            span!=bestItem.title
+          p!=bestItem.text

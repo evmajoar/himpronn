@@ -1,0 +1,27 @@
+mixin logo(name, ext, width, height, mods)
+
+  //- Описание аргументов функции
+    imgName   - имя файла с изображением [string]
+    imgExt    - расширение файла [string]
+    imgWidth  - ширина изображение [number]
+    imgHeight - высота изображение [number]
+    mods      - модификаторы (через запятую) [string]
+  //- ---------------------------
+
+  -
+    var className = 'logo';
+
+    var allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods += ' ' + className + '--' + modsList[i].trim();
+      }
+    }
+
+  if (attributes.href)
+    a(class=className + allMods)&attributes(attributes)
+      img(src=(imagesPath + name + '.' + ext), title=name, alt=name, width=width, height=height)
+  else
+    div(class=className + allMods)&attributes(attributes)
+      img(src=(imagesPath + name + '.' + ext), title=name, alt=name, width=width, height=height)

@@ -1,0 +1,172 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+.about
+  $component: & //#{$component}__element
+  background-color: $colorYellow
+  padding-top: 50px
+  padding-bottom: 114px
+  position: relative
+
+  @include breakPoint(md)
+    padding-top: 90px
+    padding-bottom: 100px
+
+  @include breakPoint(xl)
+    padding-top: 120px
+    padding-bottom: 147px
+
+
+  &__container
+    position: relative
+    z-index: 2
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+
+
+  &__title
+    @include fontFamily($fontJura)
+    @include fontSize(36)
+    line-height: 40px
+
+    @include breakPoint(md)
+      @include fontSize(50)
+      line-height: 100%
+
+
+  &__description
+    @include fontSize(18)
+    line-height: 150%
+    margin-top: 17px
+
+    @include breakPoint(md)
+      @include fontSize(24)
+      line-height: 120%
+
+
+  &__text-content
+    @include breakPoint(md)
+      grid-column: 1/-1
+
+    @include breakPoint(xl)
+      grid-column: 1/5
+
+
+  &__text
+    margin-top: 17px
+    line-height: 150%
+    font-weight: 300
+
+    b
+      @include fontSize(18)
+
+    &--last
+      margin-top: 30px
+
+
+  &__text-list
+    margin-top: 20px
+
+    @include breakPoint(md)
+      margin-top: 30px
+
+
+  &__text-list-item
+    margin-bottom: 20px
+    line-height: 150%
+    font-weight: 300
+
+    b
+      font-weight: 700
+
+    @include breakPoint(md)
+      margin-bottom: 30px
+
+    &:last-child
+      margin-bottom: 0
+
+
+  &__list
+    margin-top: 30px
+
+    @include breakPoint(md)
+      grid-column: 1 / -1
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-column-gap: $gridGutterWidth
+      grid-row-gap: 60px
+
+    @include breakPoint(xl)
+      margin-top: 0
+      grid-column: 5/12
+
+
+  &__item
+    margin-bottom: 30px
+
+    @include breakPoint(md)
+      margin-bottom: 0
+
+    b
+      @include fontFamily($fontJura)
+      @include fontSize(24)
+      font-weight: 700
+      line-height: 120%
+
+    p
+      margin-top: 20px
+      line-height: 150%
+      font-weight: 300
+
+    &:last-child
+      margin-bottom: 0
+
+  &__decorations
+    display: none
+
+    @include breakPoint(xl)
+      display: block
+      position: absolute
+      z-index: 1
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+
+  &__decoration
+    &-1, &-2, &-3, &-4, &-5
+      opacity: 0
+      display: block
+      position: absolute
+      z-index: 1
+      animation: ease infinite showFormules
+
+      path
+        stroke: $colorBlack
+
+    &-1
+      top: ((40px / 947px) * 100)#{'%'}
+      left: ((72px / $container-xl) * 100)#{'%'}
+
+    &-2
+      top: ((459px / 947px) * 100)#{'%'}
+      left: ((12px / $container-xl) * 100)#{'%'}
+
+    &-3
+      top: ((833px / 947px) * 100)#{'%'}
+      left: ((249px / $container-xl) * 100)#{'%'}
+
+    &-4
+      top: ((111px / 947px) * 100)#{'%'}
+      right: ((218px / $container-xl) * 100)#{'%'}
+
+    &-5
+      top: ((440px / 947px) * 100)#{'%'}
+      right: ((69px / $container-xl) * 100)#{'%'}
+
+
+    @for $i from 1 through 5
+      &-#{$i}
+        animation-duration: #{$i + 3}s
+        animation-delay: #{$i + 1}s

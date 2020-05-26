@@ -1,0 +1,41 @@
+@import "../variables.sass"
+@import "media-mixins.sass"
+
+$screen-xs: 0 !default
+$screen-sm: 480px !default
+$screen-md: 768px !default
+$screen-lg: 992px !default
+$screen-xl: 1200px !default
+$screen-xxl: 1800px !default
+
+$gridColumns: 12 !default
+$gridColumnWidth: 70px !default
+$gridGutterWidth: 30px !default
+
+
+/**
+  * Миксин подключения 12 колоночного grid-контейнера
+  * @param bool $isCentered
+  */
+@mixin gridContainer($isCentered: true)
+  display: grid
+  padding-left: 15px
+  padding-right: 15px
+  max-width: $container-sm
+  @content
+
+  @if $isCentered
+    margin-left: auto
+    margin-right: auto
+
+  @include breakPoint(md)
+    grid-template-columns: repeat($gridColumns, minmax(auto, $gridColumnWidth - 27))
+    grid-column-gap: $gridGutterWidth - 10
+    max-width: $container-md
+
+  @include breakPoint(xl)
+    grid-template-columns: repeat($gridColumns, minmax(auto, $gridColumnWidth))
+    grid-column-gap: $gridGutterWidth
+    padding-left: 0
+    padding-right: 0
+    max-width: $container-xl

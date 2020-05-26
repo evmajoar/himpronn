@@ -1,0 +1,202 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.clients
+  $component: & //#{$component}__element
+  padding-top: 30px
+  padding-bottom: 50px
+  background: #2C373B url("#{$imageDir}background/background-reviews.jpg") center / cover no-repeat
+  position: relative
+
+  @include breakPoint(md)
+    padding-top: 60px
+
+  @include breakPoint(xl)
+    padding-top: 100px
+    padding-bottom: 320px  
+
+
+  &__container
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+      justify-content: center
+    position: relative
+    z-index: 2
+
+
+  &__title
+    @include fontFamily($fontJura)
+    @include fontSize(36)
+    line-height: 40px
+    text-align: center
+    color: $colorWhite
+
+    @include breakPoint(md)
+      @include fontSize(36)
+      margin-left: auto
+      margin-right: auto
+      max-width: 600px
+      grid-column: 1/-1
+
+    @include breakPoint(xl)
+      @include fontSize(50)
+      line-height: 100%
+      max-width: $container-md
+
+
+  &__text
+    margin-top: 30px
+    line-height: 150%
+    text-align: center
+    color: $colorWhite
+
+    @include breakPoint(md)
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+      max-width: 600px
+      grid-column: 1/-1
+
+    @include breakPoint(xl)
+      max-width: $container-md
+
+
+  &__list
+    margin-top: 30px
+    
+    @include breakPoint(md)
+      grid-column: 1/-1
+      margin-left: auto
+      margin-right: auto
+      margin-top: 80px
+      max-width: 600px
+
+    @include breakPoint(xl)
+      display: grid
+      grid-template-columns: repeat(3, 1fr)  
+      gap: $gridGutterWidth + 30 $gridGutterWidth
+      max-width: 100%
+
+
+  &__item
+    margin-bottom: 30px
+
+    @include breakPoint(xl)
+      margin-bottom: 0
+
+    &:last-child
+      margin-bottom: 0
+
+    &:hover
+      @include breakPoint(xl)
+        & > #{$component}__item-text
+          background: $colorYellow
+
+        & > #{$component}__item-wrapper > #{$component}__item-picture
+          transform: rotate(45deg)   
+
+
+  &__item-text
+    background: $colorWhite
+    border-radius: 30px 30px 30px 0
+    padding: 60px 20px 40px
+    text-align: center
+    line-height: 150%
+    position: relative
+    transition: all $transitionTime
+    @include fontSize(12)
+
+    @include breakPoint(md)
+      padding: 60px 70px
+
+    svg
+      position: absolute
+      top: 20px
+      left: 20px
+
+
+  &__item-wrapper
+    margin-top: 40px
+    display: flex
+
+    @include breakPoint(md)
+      margin-top: 20px
+      max-width: 370px
+
+    @include breakPoint(xl)
+      margin-top: 40px  
+
+
+  &__item-picture
+    width: 70px
+    height: 70px
+    flex-shrink: 0
+    margin-right: 30px
+    border-radius: 0 30px 30px 30px
+    overflow: hidden
+    transition: all $transitionTime
+
+    img
+      width: 100%
+      height: 100%
+
+
+  &__item-about
+    color: $colorWhite
+
+    b
+      @include fontFamily($fontJura)
+      @include fontSize(18)
+      line-height: 120%
+
+    span
+      display: block
+      line-height: 150%
+      margin-top: 10px
+      @include fontSize(12)
+      
+
+  &__decorations
+    display: none
+
+    @include breakPoint(xl)
+      display: block
+      position: absolute
+      z-index: 1
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+
+
+  &__decoration
+    &-1, &-2, &-3, &-4
+      opacity: 0
+      display: block
+      position: absolute
+      z-index: 1
+      animation: ease infinite showFormules
+
+    &-1
+      top: ((141px / 935px) * 100)#{'%'}
+      right: ((99px / $container-xl) * 100)#{'%'}
+
+    &-2
+      top: ((173px / 935px) * 100)#{'%'}
+      left: ((200px / $container-xl) * 100)#{'%'}
+
+    &-3
+      top: ((614px / 935px) * 100)#{'%'}
+      left: ((106px / $container-xl) * 100)#{'%'}
+
+    &-4
+      top: ((581px / 935px) * 100)#{'%'}
+      right: ((0px / $container-xl) * 100)#{'%'}
+
+
+    @for $i from 1 through 4
+      &-#{$i}
+        animation-duration: #{$i + 3}s
+        animation-delay: #{$i + 1}s

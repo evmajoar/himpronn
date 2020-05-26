@@ -1,0 +1,35 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.modals
+  $component: & //#{$component}__element
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow-x: hidden
+  overflow-y: auto
+  display: none
+  justify-content: center
+  align-items: center
+  z-index: 50
+
+
+  .overlay
+    display: none
+    cursor: pointer
+    position: fixed
+    background: transparentize($colorBlack, .5)
+    width: 100%
+    height: 100%
+    z-index: 51
+    animation: show .2s
+
+
+  &--open
+    display: flex
+
+    > .overlay
+        display: block

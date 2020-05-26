@@ -1,0 +1,14 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.logo
+  $component: & //#{$component}__element
+
+  img
+    width: 111px
+    height: 43px
+
+    @include breakPoint(md)
+      width: 165px
+      height: 63px

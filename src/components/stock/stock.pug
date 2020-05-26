@@ -1,0 +1,14 @@
+section.stock
+  .stock__container
+    picture.stock__picture
+      source(srcset=imagesPath + 'content/image-content-truck.webp', type="image/webp")
+      source(srcset=imagesPath + 'content/image-content-truck.png', type="image/png")
+      img(src=imagesPath + 'content/image-content-truck.png', title=siteName, alt=siteName, loading='lazy')
+    .stock__content
+      h2.stock__title Акция!
+      p.stock__text
+        strong Бесплатная доставка #[span до 31 мая 2020]
+        | Закажите раствор до 31 мая 2020 и получите бесплатную доставку по области #[b в подарок!]
+      p.stock__buttons
+        button.button.button--red.stock__button.js-modal(type='button', data-target='orderQ')
+          span Заказать с бесплатной #[br] доставкой  

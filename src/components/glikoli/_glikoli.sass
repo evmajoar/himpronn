@@ -1,0 +1,279 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.glikoli
+  $component: & //#{$component}__element
+
+  &__container
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+      justify-content: center
+
+  &__why
+    padding-top: 43px
+    padding-bottom: 25px
+
+    @include breakPoint(md)
+      padding-top: 73px
+      padding-bottom: 36px
+      grid-column: 1/-1
+
+    @include breakPoint(xl)
+      padding-top: 99px
+      padding-bottom: 38px
+
+
+  &__why-title
+    @include fontFamily($fontJura)
+    @include fontSize(20)
+    line-height: 120%
+    text-align: center
+
+    @include breakPoint(md)
+      @include fontSize(36)
+      margin-left: auto
+      margin-right: auto
+      max-width: 600px
+
+    @include breakPoint(xl)
+      @include fontSize(50)
+      line-height: 100%
+      max-width: $container-md
+
+
+  &__why-text
+    margin-top: 20px
+    line-height: 150%
+    text-align: center
+    font-weight: 300
+
+    @include breakPoint(md)
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+      max-width: 600px
+
+    @include breakPoint(xl)
+      max-width: $container-md
+
+
+  &__why-list
+    margin-top: 30px
+
+    @include breakPoint(md)
+      margin-top: 50px
+
+      @include breakPoint(xl)
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-column-gap: $gridGutterWidth
+
+
+  &__why-item
+    border: 1px solid #DADADA
+    padding: 25px
+    margin-bottom: 30px
+    transition: all $transitionTime
+
+    @include breakPoint(md)
+      padding: 50px
+
+    @include breakPoint(xl)
+      margin-bottom: 0
+
+      &:hover
+        background-color: $colorYellow
+
+    b
+      @include fontFamily($fontJura)
+      @include fontSize(20)
+      font-weight: 700
+      line-height: 120%
+      margin-top: 30px
+      display: block
+
+      @include breakPoint(md)
+        @include fontSize(24)
+
+    p
+      margin-top: 20px
+      line-height: 150%
+      font-weight: 300
+
+    &:last-child
+      margin-bottom: 0
+
+
+  &__where
+    padding-top: 25px
+    padding-bottom: 50px
+
+    @include breakPoint(md)
+      padding-top: 36px
+      padding-bottom: 122px
+      grid-column: 1/-1
+
+    @include breakPoint(xl)
+      padding-top: 38px
+      padding-bottom: 76px
+
+
+  &__where-title
+    @include fontFamily($fontJura)
+    @include fontSize(36)
+    line-height: 40px
+    text-align: center
+
+    @include breakPoint(md)
+      margin-left: auto
+      margin-right: auto
+      max-width: 600px
+
+    @include breakPoint(xl)
+      max-width: $container-md
+
+
+  &__where-text
+    line-height: 150%
+    margin-top: 20px
+    text-align: center
+    font-weight: 300
+
+    @include breakPoint(md)
+      margin-top: 30px
+      margin-left: auto
+      margin-right: auto
+      max-width: 600px
+
+    @include breakPoint(xl)
+      max-width: $container-md
+
+
+  &__where-list
+    margin-top: 30px
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 20px
+
+    @include breakPoint(md)
+      grid-template-columns: repeat(2, 319px)
+      justify-content: center
+      grid-gap: 60px
+      margin-top: 50px
+
+    @include breakPoint(xl)
+      grid-template-columns: repeat(3, 319px)
+      grid-row-gap: 50px
+
+  &__where-item
+    display: flex
+    border-radius: 13px
+    background-color: $colorYellow
+    padding: 22px 10px
+    min-height: 140px
+    overflow: hidden
+    text-align: left
+    background-repeat: no-repeat
+    transition: all $transitionTime
+
+    @include breakPoint(md)
+      min-height: 319px
+      background-size: auto !important
+
+    b
+      @include fontFamily($fontJura)
+      @include fontSize(11)
+      font-weight: 700
+      line-height: 120%
+
+      @include breakPoint(md)
+        @include fontSize(24)
+
+    &:nth-child(1)
+      background-position: 100% 0
+      background-image: url("#{$imageDir}decor/image-decor-car.png")
+      background-size: 90px 79px
+      text-align: center
+      align-items: flex-end
+      justify-content: center
+      padding: 22px 10px
+
+      @include breakPoint(md)
+        padding: 52px 24px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: 110%
+
+    &:nth-child(2)
+      background-position: 100% 0
+      background-image: url("#{$imageDir}decor/image-decor-plant.png")
+      background-size: 120px 100%
+      padding: 33px 10px
+
+      @include breakPoint(md)
+        padding: 77px 27px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: 10px
+
+    &:nth-child(3)
+      background-position: 0 0
+      background-image: url("#{$imageDir}decor/image-decor-berries.png")
+      background-size: 89px 82px
+      padding: 30px 17px
+      align-items: flex-end
+
+      @include breakPoint(md)
+        padding: 69px 40px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: -10%
+
+    &:nth-child(4)
+      background-position: 100% 0
+      background-image: url("#{$imageDir}decor/image-decor-woman.png")
+      background-size: 63px 100%
+      padding: 27px 20px
+
+      @include breakPoint(md)
+        padding: 62px 45px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: 110%
+
+    &:nth-child(5)
+      background-position: 100% 100%
+      background-image: url("#{$imageDir}decor/image-decor-center.png")
+      background-size: 107px 128px
+      padding: 23px 14px
+
+      @include breakPoint(md)
+        padding: 54px 32px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: 110%
+
+    &:nth-child(6)
+      background-position: 0 100%
+      background-image: url("#{$imageDir}decor/image-decor-house.png")
+      background-size: 102px 89px
+      padding: 15px 22px
+
+      @include breakPoint(md)
+        padding: 36px 51px
+
+      &:hover
+        @include breakPoint(xl)
+          background-position-x: -10%
+
+    &:hover
+      background-color: $colorRed
+      > b
+        color: $colorWhite

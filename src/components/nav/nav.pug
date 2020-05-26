@@ -1,0 +1,29 @@
+mixin nav(mods)
+
+  -
+    var className = 'nav';
+
+    var allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods += ' ' + className + '--' + modsList[i].trim();
+      }
+    }
+
+  nav(class=className + allMods)&attributes(attributes)
+
+    button(
+      class=className + '__menu', 
+      data-target-class='nav', 
+      data-target-class-toggle='nav--open' 
+      type='button'
+      )
+      span Меню
+
+    div(class=className + '__wrapper')
+      ul(class=className + '__list')
+        include nav.data.pug
+        each navItem in navData
+          li(class=className + '__item')
+            a(class=className + '__link js-anchor', href=navItem.href)=navItem.title

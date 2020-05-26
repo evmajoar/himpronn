@@ -1,0 +1,120 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.best
+  $component: & //#{$component}__element
+  padding-top: 70px
+  padding-bottom: 400px
+  background: url("#{$imageDir}background/naliv.png") 52% 100% no-repeat, url("#{$imageDir}background/background-best.jpg") 53% 50% / cover no-repeat
+
+  @include breakPoint(md)
+    background: url("#{$imageDir}background/naliv.png") 54% 100% / 250px 289px no-repeat, url("#{$imageDir}background/background-best.jpg") 54% 50% / cover no-repeat
+    padding-bottom: 330px
+
+  @include breakPoint(xl)
+    background: url("#{$imageDir}background/naliv.png") 73% 100% / 220px 262px no-repeat, url("#{$imageDir}background/background-best.jpg") 73% 50% / cover no-repeat
+    padding-top: 115px
+    padding-bottom: 400px
+    transition: all $transitionTime
+
+    &:hover
+      background: url("#{$imageDir}background/naliv.png") 54% 100% / 220px 262px no-repeat, url("#{$imageDir}background/background-best.jpg") 54% 50% / cover no-repeat
+
+  
+  &__container
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+
+    @include breakPoint(md)
+      justify-content: center
+
+    @include breakPoint(xl)
+      position: relative
+
+      &::before
+        content: ''
+        position: absolute
+        top: -300px
+        right: -200px
+        height: 389px
+        width: 398px
+        background: url("#{$imageDir}decor/image-decor-canisters.svg") center / cover no-repeat
+
+
+  &__title
+    line-height: 40px
+    text-align: center
+    @include fontFamily($fontJura)
+    @include fontSize(36)
+
+    @include breakPoint(md)
+      margin-left: auto
+      margin-right: auto
+      max-width: 600px
+      grid-column: 3/11
+
+    @include breakPoint(xl)
+      max-width: $container-md
+
+
+  &__list
+    margin-top: 30px
+
+    @include breakPoint(md)
+      margin-top: 80px
+      grid-column: 1/-1
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-column-gap: $gridGutterWidth
+      grid-row-gap: 80px
+
+    @include breakPoint(xl)
+      grid-template-columns: repeat(3, 1fr)
+
+  &__item
+    margin-bottom: 30px
+
+    @include breakPoint(md)
+      margin-bottom: 0
+
+    @include breakPoint(xl)
+      &:hover
+        > strong svg
+          fill: $colorRed
+
+    &:last-child
+      margin-bottom: 0
+
+    strong
+      display: flex
+
+      svg
+        transition: all .3s
+        fill: $colorBlack
+        min-width: 50px
+        margin-right: 30px
+
+        @include breakPoint(md)
+          min-width: 70px
+          width: 70px
+          height: 70px
+
+      span
+        flex-grow: 0
+        line-height: 120%
+        font-weight: 700
+        @include fontSize(24)
+        @include fontFamily($fontJura)
+
+    p
+      margin-left: 80px
+      margin-top: 20px
+      line-height: 150%
+      @include fontSize(14)
+      font-weight: 300
+
+      @include breakPoint(md)
+        margin-left: 100px
+        @include fontSize(16)

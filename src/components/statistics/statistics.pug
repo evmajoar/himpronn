@@ -1,0 +1,15 @@
+-
+  var dataS = [
+    {title: '10', description: 'лет опыта в отрасли'},
+    {title: '255 857', description: 'тонн гликолей переработано'},
+    {title: '350', description: 'довольных постоянных клиентов'},
+    {title: '20 946', description: 'тонн гликолей производим в год'},
+  ]
+
+section.statistics
+  .statistics__container
+    ul.statistics__list
+      each item in dataS
+        li.statistics__item
+          b=item.title
+          p=item.description

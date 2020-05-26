@@ -1,0 +1,54 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.button
+  $component: & //#{$component}__element
+
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  background: none
+  color: $white
+  @include fontFamily($fontJura)
+  @include fontSize(20)
+  font-weight: 700
+  border: 0
+  border-radius: 30px
+  margin: 0
+  padding: 20px 35px
+  cursor: pointer
+  user-select: none
+  white-space: nowrap
+  transition: all $transitionTime
+
+
+  &--red
+    background-color: $colorRed
+
+    &:hover
+      @include breakPoint(xl)
+        background-color: $colorYellow
+        color: $textColor
+
+
+  &--yellow
+    background-color: $colorYellow
+    color: $colorBlack
+
+    &:hover
+      @include breakPoint(xl)
+        background-color: $colorRed
+        color: $colorWhite 
+
+
+  &--transparent
+    background-color: transparent
+    border: 1px solid $colorBlack
+    color: $colorBlack
+
+    &:hover
+      @include breakPoint(xl)
+        background-color: $colorRed
+        color: $colorWhite
+        border-color: transparent     

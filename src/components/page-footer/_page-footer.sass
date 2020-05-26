@@ -1,0 +1,202 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.page-footer
+  $component: & //#{$component}__element
+  background: $colorYellow
+  padding-top: 50px
+  padding-bottom: 50px
+
+  @include breakPoint(md)
+    padding-top: 100px
+    padding-bottom: 60px
+
+  @include breakPoint(xl)
+    margin-top: -420px
+    padding-top: 360px
+
+
+  &__container
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+
+
+  &__info, &__contacts, &__social, .copy
+    @include breakPoint(md)
+      grid-column: 2/12 
+
+    // @include breakPoint(xl)
+    //   grid-column: 1/-1   
+
+
+  &__info       
+    @include breakPoint(xl)
+      grid-column: 1/5
+      padding-top: 40px
+
+
+  &__contacts
+    @include breakPoint(xl)
+      grid-column: 5/9
+
+
+  &__social    
+    @include breakPoint(xl)
+      grid-column: 9/-1
+
+
+  &__logo
+    img
+      width: 165px
+      height: 63px
+
+
+  &__info-text
+    margin-top: 30px
+    line-height: 150%
+    font-weight: 300
+
+
+  &__info-list
+      margin-top: 30px
+
+
+  &__info-item
+    margin-bottom: 15px
+    font-weight: 300
+
+    &:last-child
+      margin-bottom: 0
+
+    &--file
+      display: flex
+      align-items: center
+
+      a, svg path
+        transition: all .3s
+
+      svg path  
+        fill: $colorBlack
+
+      a
+        margin-left: 15px
+        color: $colorBlack 
+
+      &:hover
+        @include breakPoint(xl)
+        > a
+            color: $colorRed
+        > svg path
+            fill: $colorRed
+
+  &__contacts, &__social
+    margin-top: 30px  
+
+    &-title
+      @include fontFamily($fontJura)
+      @include fontSize(36)
+      line-height: 40px
+      font-weight: 400
+
+    &-list
+      margin-top: 30px  
+
+
+  &__contacts-item
+    margin-bottom: 30px
+    display: flex
+    align-items: center
+    color: $colorBlack
+    line-height: 150%
+    font-weight: 300
+    transition: all .3s
+
+    a
+      color: $colorBlack
+      transition: all .3s
+
+    svg
+      margin-right: 10px
+
+    &:first-child
+       svg
+        path
+          transition: all .3s
+          stroke: $colorBlack 
+
+    &:nth-child(2), &:last-child  
+      svg
+        path
+          transition: fill .3s
+          fill: $colorBlack
+
+    &:hover
+      @include breakPoint(xl)
+        &:first-child
+          color: $colorRed
+          > svg path
+            stroke: $colorRed  
+
+        &:nth-child(2), &:last-child
+          > a
+            color: $colorRed
+          > svg path
+            fill: $colorRed      
+
+
+    &:last-child
+      margin-bottom: 0
+
+
+  &__buttons
+    margin-top: 30px
+
+
+  &__button
+    padding-top: 16px
+    padding-bottom: 16px
+    font-weight: 400
+    @include fontSize(18)
+
+
+  &__social-list
+    display: flex
+
+  
+  &__social-item
+    margin-right: 10px
+
+    a
+      &:hover
+        @include breakPoint(xl)
+          > svg path
+            fill: $colorRed
+
+    svg path
+      transition: fill .3s
+      fill: $colorBlack        
+
+    &:last-child
+      margin-right: 0
+
+    span
+      font-size: 0       
+
+.copy
+  margin-top: 30px
+  width: 100%
+  @include fontSize(12)
+
+  @include breakPoint(xl)
+    grid-row-start: 2
+    grid-column: 1/-1 !important
+    margin-top: 60px
+
+  a
+    color: $colorRed
+    transition: all .3s
+    @include breakPoint(xl)
+      &:hover
+        color: $colorBlack

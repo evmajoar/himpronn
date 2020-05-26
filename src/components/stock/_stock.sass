@@ -1,0 +1,118 @@
+@import "../../library/variables.sass"
+@import "../../library/mixins.sass"
+
+
+.stock
+  $component: & //#{$component}__elem
+  padding-top: 50px
+  padding-bottom: 50px
+  position: relative
+
+  @include breakPoint(md)
+    padding-top: 100px
+    padding-bottom: 100px
+
+  @include breakPoint(xl)
+    margin-top: -323px
+
+  &.is-show
+    > #{$component}__container > #{$component}__picture
+      opacity: 1
+      transform: translate3d(-40px, 0, 0)
+
+
+  &__container
+    @include gridContainer()
+      padding-left: 7px
+      padding-right: 7px
+      justify-content: center
+
+    @include breakPoint(md)
+      background: $colorWhite
+      border-radius: 30px 
+
+    @include breakPoint(xl)
+      padding-top: 100px
+      padding-bottom: 100px
+
+
+  &__picture, &__content
+    @include breakPoint(md)
+      grid-column: 1/-1
+      max-width: 570px 
+      width: 100% 
+      margin: 0 auto
+
+
+  &__picture
+    opacity: 0
+    transform: translate3d(0, 0, 0)
+    transition: all .6s
+    @include breakPoint(xl)
+      position: absolute
+      left: 40px
+
+    img
+      max-width: 469px
+      width: 100%
+      height: auto
+      display: block
+      margin: 0 auto 
+
+      @include breakPoint(xl)
+        max-width: 100%   
+
+
+  &__content    
+    @include breakPoint(xl)
+      grid-column: 6/12
+
+  &__title
+    display: none
+
+    @include breakPoint(xl)
+      display: block
+      @include fontFamily($fontJura)
+      @include fontSize(24)
+      line-height: 120%
+      color: $colorRed
+
+
+  &__text
+    margin-top: 30px
+    line-height: 150%
+    @include fontSize(18)
+    font-weight: 300
+
+    b
+      font-weight: 700
+
+    strong
+      display: block
+      line-height: 40px
+      margin-bottom: 30px
+      @include fontFamily($fontJura)
+      @include fontSize(36)
+      font-weight: 700
+
+      @include breakPoint(md)
+        @include fontSize(50)
+
+      span
+        color: $colorRed
+
+        @include breakPoint(md)
+          display: block
+
+
+  &__buttons
+    margin-top: 30px  
+
+
+  &__button
+    padding-left: 30px
+    padding-right: 30px
+    span
+      @include breakPoint(md)
+        br
+          display: none      
